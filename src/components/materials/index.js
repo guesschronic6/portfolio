@@ -23,5 +23,18 @@ const materials = {
     roughnessMap: textures.concrete.roughness,
   }),
 };
+function repeatMaterial(material, size) {
+  _repeatMap(material.aoMap, size);
+  _repeatMap(material.map, size);
+  _repeatMap(material.normalMap, size);
+  _repeatMap(material.roughnessMap, size);
+  _repeatMap(material.metalnessMap, size);
+}
 
-export { textures, materials };
+function _repeatMap(map, size) {
+  map.repeat.set(size, size);
+  map.wrapS = THREE.RepeatWrapping;
+  map.wrapT = THREE.RepeatWrapping;
+}
+
+export { textures, materials, repeatMaterial };

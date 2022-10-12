@@ -1,5 +1,17 @@
 import * as THREE from "three";
+import Stats from "three/examples/jsm/libs/stats.module";
 import { size } from "../context";
+
+function addStats() {
+  const stats = Stats();
+  document.body.appendChild(stats.dom);
+
+  const tick = () => {
+    stats.update();
+    window.requestAnimationFrame(tick);
+  };
+  tick();
+}
 
 function buildRenderer() {
   const canvas = document.querySelector("canvas.webgl");
@@ -13,4 +25,5 @@ function buildRenderer() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   return renderer;
 }
-export { buildRenderer };
+
+export { buildRenderer, addStats };
