@@ -1,0 +1,79 @@
+:root {
+  --primaryBackground: #040a2a;
+  --primaryText: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+  color: var(--primaryText);
+  overflow-x: hidden;
+}
+
+canvas.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.root-container {
+  height: 300vh;
+  width: 100%;
+}
+
+.primary-background {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+  padding: 0px;
+}
+.primary-background > div {
+  background-color: var(--primaryBackground);
+  height: inherit;
+  width: inherit;
+}
+
+.content-container {
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  gap: 65px;
+}
+
+.content-container > header,
+.content-container > main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-container > main {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Courier New", Courier, monospace;
+}
+.content-container > header h1 {
+  font-weight: 900;
+  font-size: 65px;
+  margin-top: -15px;
+}
+
+.content-container > header h3 {
+  font-weight: 100;
+  font-size: 35px;
+}
